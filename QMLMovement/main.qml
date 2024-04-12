@@ -39,6 +39,15 @@ Window {
             display: AbstractButton.TextOnly
             onPressed: button.destroy()
 
+            Timer {
+                interval: 15 + Math.floor(Math.random() * 15)
+                running: true
+                repeat: true
+                onTriggered: {
+                    button.y += 1;
+                }
+            }
+
             contentItem: Label {
                 text: parent.text
                 font: parent.font
