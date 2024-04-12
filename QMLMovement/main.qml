@@ -38,6 +38,7 @@ Window {
             text: "*"
             display: AbstractButton.TextOnly
             onPressed: button.destroy()
+            focusPolicy: Qt.ClickFocus
 
             Timer {
                 interval: 15 + Math.floor(Math.random() * 15)
