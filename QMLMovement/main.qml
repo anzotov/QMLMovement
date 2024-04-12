@@ -1,9 +1,43 @@
+import QtQml 2.15
 import QtQuick 2.15
+import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
 
 Window {
-    width: 640
-    height: 480
+    id: root
+
+    width: 300
+    height: 600
     visible: true
-    title: qsTr("Hello World")
+
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: buttonComponent.createObject(root, {
+            "x": 10,
+            "y": 10
+        })
+    }
+
+    Component {
+        id: buttonComponent
+
+        Button {
+            text: "*"
+            display: AbstractButton.TextOnly
+            width: 15
+            height: 15
+
+            contentItem: Label {
+                text: parent.text
+                font: parent.font
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+
+        }
+
+    }
+
 }
