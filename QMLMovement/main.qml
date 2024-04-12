@@ -37,15 +37,22 @@ Window {
 
             text: "*"
             display: AbstractButton.TextOnly
-            onPressed: button.destroy()
             focusPolicy: Qt.ClickFocus
+
+            MouseArea {
+                id: mouseArea
+
+                onPressed: button.destroy()
+                anchors.fill: parent
+                hoverEnabled: true
+            }
 
             Timer {
                 interval: 15 + Math.floor(Math.random() * 15)
                 running: true
                 repeat: true
                 onTriggered: {
-                    button.y += 1;
+                    button.y += mouseArea.containsMouse ? 2 : 1;
                 }
             }
 
