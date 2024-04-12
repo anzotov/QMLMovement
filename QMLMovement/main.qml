@@ -53,6 +53,10 @@ Window {
                 repeat: true
                 onTriggered: {
                     button.y += mouseArea.containsMouse ? 2 : 1;
+                    if (button.y + button.height >= root.height) {
+                        root.color = "red";
+                        root.title = "Вы проиграли!";
+                    }
                     if ((button.x + button.width > root.width) || (button.y + button.height > root.height))
                         button.destroy();
 
