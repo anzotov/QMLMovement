@@ -14,10 +14,16 @@ Window {
         interval: 1000
         running: true
         repeat: true
-        onTriggered: buttonComponent.createObject(root, {
-            "x": 10,
-            "y": 10
-        })
+        onTriggered: {
+            var buttonWidth = 15;
+            var buttonHeight = 15;
+            buttonComponent.createObject(root, {
+                "width": buttonWidth,
+                "height": buttonHeight,
+                "x": Math.floor(Math.random() * (root.width - buttonWidth)),
+                "y": Math.floor(Math.random() * (100 - buttonHeight))
+            });
+        }
     }
 
     Component {
@@ -28,8 +34,6 @@ Window {
 
             text: "*"
             display: AbstractButton.TextOnly
-            width: 15
-            height: 15
             onPressed: button.destroy()
 
             contentItem: Label {
