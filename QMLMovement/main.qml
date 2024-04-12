@@ -24,10 +24,13 @@ Window {
         id: buttonComponent
 
         Button {
+            id: button
+
             text: "*"
             display: AbstractButton.TextOnly
             width: 15
             height: 15
+            onPressed: button.destroy()
 
             contentItem: Label {
                 text: parent.text
