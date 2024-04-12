@@ -14,11 +14,11 @@ Window {
         running: true
         repeat: true
         onTriggered: {
-            var minCreationTimeMs = 100;
-            var maxCreationTimeMs = 1000;
+            const minCreationTimeMs = 100;
+            const maxCreationTimeMs = 1000;
             interval = minCreationTimeMs + Math.floor(Math.random() * (maxCreationTimeMs - minCreationTimeMs));
-            var buttonWidth = 15;
-            var buttonHeight = 15;
+            const buttonWidth = 15;
+            const buttonHeight = 15;
             buttonComponent.createObject(root, {
                 "width": buttonWidth,
                 "height": buttonHeight,
