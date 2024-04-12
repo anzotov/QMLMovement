@@ -15,9 +15,9 @@ Window {
         running: true
         repeat: true
         onTriggered: {
-            var minCreationTime = 100;
-            var maxCreationTime = 1000;
-            interval = minCreationTime + Math.floor(Math.random() * (maxCreationTime - minCreationTime));
+            var minCreationTimeMs = 100;
+            var maxCreationTimeMs = 1000;
+            interval = minCreationTimeMs + Math.floor(Math.random() * (maxCreationTimeMs - minCreationTimeMs));
             var buttonWidth = 15;
             var buttonHeight = 15;
             buttonComponent.createObject(root, {
