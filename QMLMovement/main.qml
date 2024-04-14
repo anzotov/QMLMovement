@@ -17,14 +17,7 @@ Window {
             const minCreationTimeMs = 100;
             const maxCreationTimeMs = 1000;
             interval = minCreationTimeMs + Math.floor(Math.random() * (maxCreationTimeMs - minCreationTimeMs));
-            const buttonWidth = 15;
-            const buttonHeight = 15;
-            buttonComponent.createObject(root, {
-                "width": buttonWidth,
-                "height": buttonHeight,
-                "x": Math.floor(Math.random() * (root.width - buttonWidth)),
-                "y": Math.floor(Math.random() * (100 - buttonHeight))
-            });
+            buttonComponent.createObject(root);
         }
     }
 
@@ -37,6 +30,12 @@ Window {
             text: "*"
             display: AbstractButton.TextOnly
             focusPolicy: Qt.ClickFocus
+            width: 15
+            height: 15
+            Component.onCompleted: {
+                x = Math.floor(Math.random() * (root.width - width));
+                y = Math.floor(Math.random() * (100 - height));
+            }
 
             MouseArea {
                 id: mouseArea
