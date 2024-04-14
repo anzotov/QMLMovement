@@ -32,10 +32,8 @@ Window {
             focusPolicy: Qt.ClickFocus
             width: 15
             height: 15
-            Component.onCompleted: {
-                x = Math.floor(Math.random() * (root.width - width));
-                y = Math.floor(Math.random() * (100 - height));
-            }
+            x: Math.floor(Math.random() * (root.width - width))
+            y: Math.floor(Math.random() * (100 - height))
 
             MouseArea {
                 id: mouseArea
